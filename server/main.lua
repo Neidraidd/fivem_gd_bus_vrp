@@ -1,3 +1,9 @@
+local GDBus = class("GDBus", vRP.Extension)
+
+function GDBus:__construct()
+    vRP.Extension.__construct(self)
+end
+
 RegisterServerEvent("gd_jobs_bus:tryStartJob")
 AddEventHandler("gd_jobs_bus:tryStartJob", function(location, tier)
      -- Do all the shit about asking if energy is enough etc
@@ -52,3 +58,5 @@ AddEventHandler("gd:pos", function(text, pos)
     file:write(str .. "\n")
     file:close()
 end)
+
+vRP:registerExtension(GDBus)
